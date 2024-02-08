@@ -6,8 +6,10 @@ definePageMeta({
 const { $api } = useNuxtApp()
 const user = useUser()
 const post = usePost()
+const favorite = useFavorite()
 
 await post.fetchPosts()
+await favorite.fetchFavorites()
 </script>
 
 <template>

@@ -1,12 +1,21 @@
 <script setup>
 import { HeartIcon } from '@heroicons/vue/24/outline'
 
-defineProps({
+const favorite = useFavorite()
+
+const props = defineProps({
   post: {
     type: Object,
     required: true
   }
 })
+
+async function follow () {
+  if( favorite.favorites.users.findIndex(el => el.id == props.post.user.id) !== -1 )
+    await favorite.unFavoriteUser(props.post.user.id)
+  else
+    await favorite.favoriteUser(props.post.user.id)
+}
 </script>
 
 <template>
@@ -18,8 +27,10 @@ defineProps({
       <div>
         by <strong>{{ post.user.name }}</strong>
       </div>
-      <button class="font-medium bg-blue-200 text-sm px-2 rounded-full">
-        Follow
+      <button  
+        class="font-medium bg-blue-200 text-sm px-2 rounded-full"
+        @click="follow">
+        {{favorite.favorites.users.findIndex(el => el.id == props.post.user.id) !== -1 ? 'Unfollow' : 'Follow'}}
       </button>
     </div>
     <p>
