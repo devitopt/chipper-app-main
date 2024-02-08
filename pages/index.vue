@@ -5,8 +5,9 @@ definePageMeta({
 
 const { $api } = useNuxtApp()
 const user = useUser()
+const post = usePost()
 
-const { data: posts } = await $api.get('posts')
+await post.fetchPosts()
 </script>
 
 <template>
@@ -14,7 +15,7 @@ const { data: posts } = await $api.get('posts')
     v-if="!user.isGuest" />
   <div class="grid gap-16">
     <PostItem
-      v-for="post in posts"
+      v-for="post in post.posts"
       :key="post.id"
       v-bind="{ post }" />
   </div>
