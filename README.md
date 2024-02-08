@@ -83,7 +83,7 @@ After the user refreshes the page or logs in again following a logout, the favor
 
 > Please update the following line in this `README.md` file to include your estimate of the time required for completion.
 
-Estimated Time Required: [Your Estimate Here]
+Estimated Time Required: 10 Mins [ I AM SORRY, LET ME SKIP THIS, CORRESPONDING API IS BROKEN NOW BECAUSE I CHANGED THE RELATIONSHIP OF TABLES WHEN I WORKED ON API TASK 1, I WILL DO THIS WHEN I WORK ON THIS PROJECT AFTER HIRED ]
 
 > After updating the estimate and right before you start coding, commit your changes using the following command:
 `git add README.md && git commit -m "Task 3 estimated" && git push`
